@@ -6,7 +6,7 @@ job ('NGINX Groovy Example') {
         scm ('H/5 * * * *')
     }
     wrappers {
-        shell ('apt get update')
+       
     }
     steps {
         shell "apt install ngnix"
