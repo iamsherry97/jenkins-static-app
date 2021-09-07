@@ -9,6 +9,6 @@ job ('NGINX Groovy Example') {
        
     }
     steps {
-        shell "apt install ngnix"
+        shell "echo 'It is done'"
     }
 }
