@@ -8,9 +8,9 @@
 //    }
 //}
 pipeline {
-    agent all
+    agent none
     stages {
-        stage {
+        stage ('Connection and changes'){
             steps {
                 sshagent (credentials: ['sherryinstance']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.236.96.234uptime'
