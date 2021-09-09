@@ -1,14 +1,14 @@
 pipeline {
-    agent {
-
-    }
+    agent any
     stages {
         stage ('Connection with server') {
+            steps {
                 sshagent (credentials: ['sherryinstance']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@34.221.226.18 uptime'
                     sh 'ssh -v ubuntu@34.221.226.18'              
                 }
             }
+        }
         stage ('Configuration changes') {
             steps {
                 sh ('sudo  touch /var/www/html/file.txt')
