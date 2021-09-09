@@ -11,10 +11,12 @@ pipeline {
     }
     stages {
         stage ('Configuration changes') {
-            sh ('sudo  touch /var/www/html/file.txt')
-            sh ('sudo rm /var/www/html/*')
-            sh ('git clone https://github.com/iamsherry97/jenkins-static-app "app-$BUILD_ID"')
-            sh ('sudo cp "app-$BUILD_ID"/* /var/www/html/')
+            steps {
+                sh ('sudo  touch /var/www/html/file.txt')
+                sh ('sudo rm /var/www/html/*')
+                sh ('git clone https://github.com/iamsherry97/jenkins-static-app "app-$BUILD_ID"')
+                sh ('sudo cp "app-$BUILD_ID"/* /var/www/html/')
+            }     
         }
     }
 }
