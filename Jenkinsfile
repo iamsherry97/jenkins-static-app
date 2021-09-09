@@ -9,7 +9,7 @@
 //}
 pipeline {
     agent all
-    stages {
+    node {
         stage ('Connection and changes'){
             steps {
                 sshagent (credentials: ['sherryinstance']) {
