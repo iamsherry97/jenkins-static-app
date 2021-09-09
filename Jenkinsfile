@@ -8,7 +8,7 @@
 //    }
 //}
 pipeline {
-    agent none
+    agent all
     stages {
         stage ('Connection and changes'){
             steps {
